@@ -1,0 +1,20 @@
+# Known-good stack for the mats env. Two-step install (torch from its own index):
+#   pip install "torch==2.5.1" --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements.txt
+#
+# nnsight is pinned to 0.7.0: it loads + generates fine, but its tracer parses the
+# CALLER's source for `with lm.trace(...)` blocks, so run trace blocks as direct
+# ipython cell input (or `python script.py`), NOT via `%run file.py`.
+transformers>=4.51,<5
+nnsight==0.7.0
+accelerate
+datasets
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+einops
+tqdm
+ipython
+jupyter_client

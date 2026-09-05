@@ -1,0 +1,12 @@
+hf_cache/
+cache/
+.pip-cache/
+*.pt
+*.npy
+*.npz
+__pycache__/
+*.pyc
+.ipython/
+Mech Interp Context Docs/
+Mech Interp Context Docs-*.zip
+__MACOSX/
