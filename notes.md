@@ -7,8 +7,10 @@
   `tmux new -s mats -x 220 -y 50`, then
   `source /15tb_scratch_data/amaan/MATS/env.sh && ipython --no-autoindent`,
   then `src/push.sh src/boot.py`  (model reload ~9s from local cache).
-- git repo initialised, initial commit 2859f00 on `main`. GitHub push PENDING a PAT
-  (SSH to github blocked on this network; HTTPS-via-proxy works).
+- git repo pushed to **github.com/amaanalisayed0412/affect-gated-honesty** (private).
+  SSH to github is blocked on this network -> push over HTTPS with a PAT:
+  `AUTH=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0); git -c http.extraHeader="Authorization: Basic $AUTH" push`
+  The token is NOT stored anywhere (no credential helper) -- supply it each session.
 - BLOCKED ON USER: (1) any edits to the 36 items (esp. PF-05 pedantry, CR-05/CR-11 ceiling
   risk); (2) a judge API key/config (OpenRouter / Anthropic / OpenAI) for defect grading.
 - NEXT once unblocked: write src/pilot.py -> run all 36 neutral-only, N=12, temp 0.8,
