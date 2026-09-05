@@ -3,10 +3,12 @@
 ## >>> RESUME HERE (2026-09-06, end of session 1) <<<
 - Phase 0 DONE. Phase 1 item pool BUILT, **awaiting user's review of data/items_preview.md**
   before the pilot run.
-- To restart the kernel: `tmux attach -t mats` (may still be alive w/ model on cuda:0),
-  else `tmux new -s mats -x 220 -y 50`, then
+- Kernel/model UNLOADED at end of session 1 (tmux `mats` killed, GPU 0 freed). Fresh boot:
+  `tmux new -s mats -x 220 -y 50`, then
   `source /15tb_scratch_data/amaan/MATS/env.sh && ipython --no-autoindent`,
-  then `src/push.sh src/boot.py`.
+  then `src/push.sh src/boot.py`  (model reload ~9s from local cache).
+- git repo initialised, initial commit 2859f00 on `main`. GitHub push PENDING a PAT
+  (SSH to github blocked on this network; HTTPS-via-proxy works).
 - BLOCKED ON USER: (1) any edits to the 36 items (esp. PF-05 pedantry, CR-05/CR-11 ceiling
   risk); (2) a judge API key/config (OpenRouter / Anthropic / OpenAI) for defect grading.
 - NEXT once unblocked: write src/pilot.py -> run all 36 neutral-only, N=12, temp 0.8,
